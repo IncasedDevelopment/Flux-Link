@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 27363,
+            "driver": "PostgreSQL",
+            "name": "localhost:27363",
+            "database": "postgres",
+            "username": "postgres",
+            "password": "postgres"
+        }
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
+}

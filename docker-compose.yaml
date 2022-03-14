@@ -1,0 +1,28 @@
+# start with
+# ./build.sh && docker-compose up --build
+
+version: '3'
+
+services:
+
+  postgres:
+    build: postgres-docker
+    volumes: ['/opt/Flux-link:/var/lib/postgresql/data']
+    ports: ['127.0.0.1:27363:5432'] # Exposed for vscode SQLTools
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  link:
+    build:
+      context: .
+      args:
+        LINK_VERSION: 2.0
+    ports: ['27362:80']
+    env_file: secrets.env # Contains DISCORD_TOKEN= and BOT_URL=
+    environment:
+      STORAGE_TYPE: postgres
+      POSTGRES_HOSTNAME: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      API_DEBUG: 'true'
