@@ -209,8 +209,8 @@ public class Language {
 	}
 
 	public static Language getGuildLanguage(final Guild guild) {
-		final Optional<API> api;
-		try {Flux
+		final Optional<FluxAPI> api;
+		try {
 			api = Main.getConnectionManager().getApi(guild.getIdLong());
 		} catch (final BackendStorageException e) {
 			e.printStackTrace();
@@ -243,7 +243,7 @@ public class Language {
 		try {
 			final Optional<FluxUser> flux = api.getUserByDiscordId(user.getIdLong());
 			if (flux.isPresent()) {
-				return getLanguage(FLUX_TO_POSIX.get(flux.get().getLangage()));
+				return getLanguage(FLUX_TO_POSIX.get(flux.get().getLanguage()));
 			} else {
 				return getLanguage(FLUX_TO_POSIX.get(api.getWebsite().getLanguage()));
 			}
