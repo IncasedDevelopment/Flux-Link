@@ -130,7 +130,7 @@
 		<dependency>
 			<groupId>com.fluxnetworks</groupId>
 			<artifactId>java-api</artifactId>
-			<version>pr12</version>
+			<version>canary</version>
 		</dependency>
 
 		<dependency>
