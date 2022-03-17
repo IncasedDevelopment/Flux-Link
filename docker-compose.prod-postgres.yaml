@@ -11,9 +11,9 @@ services:
       POSTGRES_PASSWORD: postgres
     restart: always
 
-  # If you run Flux Networks on the same machine, in docker:
+  # If you run fluxnetworks on the same machine, in docker:
   #   make sure they're on the same docker network and set BOT_URL to 'http://link'
-  # If you run Flux Networks on the same machine, on the host:
+  # If you run fluxnetworks on the same machine, on the host:
   #   add ports: ['127.0.0.1:27362:80'] and set BOT_URL to 'http://127.0.0.1:27362'
   # If you need the bot to be accessible externally:
   #   set up a reverse proxy to port 80 of this container and set BOT_URL to 'https://something'

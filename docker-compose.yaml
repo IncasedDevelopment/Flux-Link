@@ -7,7 +7,7 @@ services:
 
   postgres:
     build: postgres-docker
-    volumes: ['/opt/Flux-link:/var/lib/postgresql/data']
+    volumes: ['/opt/flux-link:/var/lib/postgresql/data']
     ports: ['127.0.0.1:27363:5432'] # Exposed for vscode SQLTools
     environment:
       POSTGRES_PASSWORD: postgres

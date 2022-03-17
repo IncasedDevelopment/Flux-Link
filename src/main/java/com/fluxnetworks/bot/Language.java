@@ -209,8 +209,8 @@ public class Language {
 	}
 
 	public static Language getGuildLanguage(final Guild guild) {
-		final Optional<FluxAPI> api;
-		try {
+		final Optional<API> api;
+		try {Flux
 			api = Main.getConnectionManager().getApi(guild.getIdLong());
 		} catch (final BackendStorageException e) {
 			e.printStackTrace();
@@ -227,7 +227,7 @@ public class Language {
 				} else {
 					return getLanguage(posix);
 				}
-			} catch (final FluxException e) {
+			} catch (final Exception e) {
 				LOGGER.warn("Cannot retrieve language for guild {}, falling back to default language.", guild.getIdLong());
 				return getDefaultLanguage();
 			}
@@ -243,7 +243,7 @@ public class Language {
 		try {
 			final Optional<FluxUser> flux = api.getUserByDiscordId(user.getIdLong());
 			if (flux.isPresent()) {
-				return getLanguage(FLUX_TO_POSIX.get(flux.get().getLanguage()));
+				return getLanguage(FLUX_TO_POSIX.get(flux.get().getLangage()));
 			} else {
 				return getLanguage(FLUX_TO_POSIX.get(api.getWebsite().getLanguage()));
 			}
